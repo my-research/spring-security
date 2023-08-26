@@ -19,7 +19,11 @@ class MvcSecurityFilterChainRegistry {
       .headers { it -> it.frameOptions { it.disable() } }
       .authorizeHttpRequests {
         it
-          .requestMatchers("/login", "/health").permitAll()
+          .requestMatchers(
+            "/login",
+            "/health"
+          )
+          .permitAll()
           .requestMatchers("/**").authenticated()
           .anyRequest().permitAll()
       }.addFilterBefore(TodoAppAuthenticationFilter(), UsernamePasswordAuthenticationFilter::class.java)

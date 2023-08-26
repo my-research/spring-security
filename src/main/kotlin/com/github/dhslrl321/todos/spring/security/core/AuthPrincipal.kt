@@ -10,7 +10,7 @@ data class AuthPrincipal(
 ) {
 
   /**
-   * role 과 authorities 를 조회
+   * role 과 authorities 를 반환
    */
   fun grantedAuthorities(): List<GrantedAuthority> = roles() + authorities()
 
