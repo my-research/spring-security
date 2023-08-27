@@ -21,12 +21,14 @@ class MvcSecurityFilterChainRegistry {
         it
           .requestMatchers(
             "/login",
-            "/health"
+            "/health",
+            "/error"
           )
           .permitAll()
           .requestMatchers("/**").authenticated()
           .anyRequest().permitAll()
-      }.addFilterBefore(TodoAppAuthenticationFilter(), UsernamePasswordAuthenticationFilter::class.java)
+      }
+      .addFilterBefore(TodoAppAuthenticationFilter(), UsernamePasswordAuthenticationFilter::class.java)
     return http.build()
   }
 }

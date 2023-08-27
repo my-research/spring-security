@@ -1,4 +1,4 @@
-package com.github.dhslrl321.todos.spring.config
+package com.github.dhslrl321.todos.spring.bean
 
 import com.github.dhslrl321.todos.domain.todo.InMemoryTodoRepository
 import com.github.dhslrl321.todos.domain.todo.TodoRepository
